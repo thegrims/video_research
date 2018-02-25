@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ls /dev/video* > media_list
+
+read -a video_list <<<$(cat media_list)
+
+
+vlc v4l2:///dev/video$1 #--sout=file/ps:go.mpg
+# vlc v4l2:///dev/video1
