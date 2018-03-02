@@ -1,2 +1,9 @@
 #!/bin/bash
+
+ls /dev/video*
+echo
+echo
 v4l2-ctl -d /dev/video0 --list-formats
+echo
+echo
+cat /proc/asound/cards

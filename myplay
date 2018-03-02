@@ -1,0 +1,7 @@
+#!/bin/bash
+for ((i=0;i<2;i++))
+do
+    ( ./play_video $i $1 & )
+done
+echo blah
+exit
