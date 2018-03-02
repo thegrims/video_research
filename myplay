@@ -1,7 +1,7 @@
 #!/bin/bash
 for ((i=0;i<2;i++))
 do
-    ( ./play_video $i $1 & )
+    ( ./play_video $i 5 & )
 done
 echo blah
 exit
