@@ -1,0 +1,1 @@
+ffmpeg -f video4linux2 -input_format h264 -s 1920x1080 -i /dev/video0 -vcodec rawvideo test.mkv

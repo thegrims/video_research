@@ -1,7 +1,29 @@
 #!/bin/bash
-for ((i=0;i<2;i++))
+
+function do_for_sigint() {
+  echo stopping
+  myDate="$(date)"
+  # echo $myDate
+
+  mkdir ./video/"$myDate"
+  mv *.ogg ./video/"$myDate"
+
+  pkill -P $$
+ exit
+}
+echo bsdfkljgl
+
+myTotalCameras="$(ls /dev/video* | wc -l)"
+echo $myTotalCameras
+for ((i=0;i<$myTotalCameras;i++))
 do
-    ( ./play_video $i 5 & )
+    ( ./play_video $i & )
 done
-echo blah
+
+while true
+do
+  trap 'do_for_sigint' INT
+done
+# wait
+# echo blah
 exit

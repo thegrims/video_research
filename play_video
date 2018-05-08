@@ -1,18 +1,11 @@
 #!/bin/bash
 
-# ls /dev/video* > media_list
-#
-# read -a video_list <<<$(cat media_list)
-#
-#
-# vlc v4l2:///dev/video$1 #--sout=file/ps:go.mpg
-# ffmpeg -b 100K -an -f video4linux2 -s 320x240 -r 10 -i /dev/audio0 -i /dev/video0 -b 100K -f ogg - | mplayer - -idle -demuxer ogg
 hwNum=$((1 + $1))
 echo $hwNum
-# (
-  cvlc v4l2:///dev/video$1:width=640:height=480 :input-slave=alsa://hw:$hwNum,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=20,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
-#   exit
-# )
+  cvlc v4l2:///dev/video$1:width=800:height=600 :input-slave=alsa://hw:$hwNum,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=20,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
+  # cvlc v4l2:///dev/video$1:width=1920:height=1080 :input-slave=alsa://hw:$hwNum,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=20,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
+  # ffmpeg -f video4linux2 -input_format h264 -s 1920x1080 -i /dev/video0 -vcodec rawvideo test.mkv
+
   # PID=$!
   # echo blah
   # echo $PID
