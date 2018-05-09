@@ -1,6 +1,5 @@
 #!/bin/bash
 whichDrive="aidan"
-WhichDrivePath="video"
 
 function do_for_sigint() {
   echo stopping
@@ -14,7 +13,7 @@ function do_for_sigint() {
   # create FQ path to new directory for drive upload
   targetDir="$(pwd)/video/$myDate"
   echo $targetDir
-  rclone copy $targetDir aidan:video/$myDate
+  rclone copy $targetDir $whichDrive:video/$myDate
 
   # kill all children of process to prevent zombies
   pkill -P $$

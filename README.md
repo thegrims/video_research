@@ -11,7 +11,6 @@ Configure for Google dive storage https://rclone.org/drive/
 
 In myplay, set  
 `WhichDrive="someDriveName"`  
-`WhichDrivePath="SomeDriveFolderPath"`  
 
 ### Usage
 Run `./myplay` to stream webcam video to video folders inside __/video__
