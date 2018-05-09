@@ -3,7 +3,10 @@
 function do_for_sigint() {
   echo stopping
   myDate="$(date)"
-  # echo $myDate
+
+  # targetDir="$(pwd)"
+  targetDir="$(pwd)/video/$myDate"
+  echo $targetDir
 
   mkdir ./video/"$myDate"
   mv *.ogg ./video/"$myDate"
@@ -11,7 +14,6 @@ function do_for_sigint() {
   pkill -P $$
  exit
 }
-echo bsdfkljgl
 
 myTotalCameras="$(ls /dev/video* | wc -l)"
 echo $myTotalCameras

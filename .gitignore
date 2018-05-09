@@ -1,0 +1,5 @@
+# exclude everything
+video/*
+
+# keeps empty folder in the repo
+!video/.gitkeep
