@@ -2,13 +2,13 @@
 bash scripts being developed for vlc camera automation
 
 ## Instructions for use
-run ./dependency_install to install script dependencies
+Run `./dependency_install` to install script dependencies
 
-for remote backups install rclone https://rclone.org/install/
-configure for google dive storage https://rclone.org/drive/
+For remote backups install rclone https://rclone.org/install/
+Configure for google dive storage https://rclone.org/drive/
 
-in myplay, set
-whichDrive="someDriveName"
-WhichDrivePath="SomeDriveFolderPath"
+In myplay, set
+`WhichDrive="someDriveName"`
+`WhichDrivePath="SomeDriveFolderPath"`
 
-run ./myplay to stream webcam video to video folders inside /video
+Run `./myplay` to stream webcam video to video folders inside __/video__
