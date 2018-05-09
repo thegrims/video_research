@@ -4,7 +4,7 @@ WhichDrivePath="video"
 
 function do_for_sigint() {
   echo stopping
-  myDate="$(date)"
+  myDate="$(date "+%F-%T")"
 
   # make a directory in video dir named from current date & time
   mkdir ./video/"$myDate"
@@ -14,7 +14,7 @@ function do_for_sigint() {
   # create FQ path to new directory for drive upload
   targetDir="$(pwd)/video/$myDate"
   echo $targetDir
-  rclone copy $targetDir aidan:video
+  rclone copy $targetDir aidan:video/$myDate
 
   # kill all children of process to prevent zombies
   pkill -P $$
