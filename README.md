@@ -13,4 +13,6 @@ In myplay, set
 `WhichDrive="someDriveName"`  
 
 ### Usage
-Run `./myplay` to stream webcam video to video folders inside __/video__
+Run `./myplay` to stream webcam video to video folders inside __/video__  
+
+If program is not getting all possible video and audio sources, use diagnostic script `./list_video` to list out video ports, video formats, and sound sources

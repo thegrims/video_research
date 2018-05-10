@@ -1,9 +1,19 @@
 #!/bin/bash
-
+echo Video Ports Open
+echo ----------------------------
 ls /dev/video*
 echo
 echo
+echo Number of Cameras Plugged In
+echo ----------------------------
+ls /dev/video* | wc -l
+echo
+echo
+echo Video Formats Possible
+echo ----------------------------
 v4l2-ctl -d /dev/video0 --list-formats
 echo
 echo
+echo Sound Sources
+echo ----------------------------
 cat /proc/asound/cards
