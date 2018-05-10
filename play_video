@@ -1,8 +1,9 @@
 #!/bin/bash
 
-hwNum=$((1 + $1))
-echo $hwNum
-  cvlc v4l2:///dev/video$1:width=800:height=600 :input-slave=alsa://hw:$hwNum,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=20,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
+
+echo Number: $1
+  cvlc v4l2:///dev/video$1:width=800:height=600 :input-slave=alsa://hw:$1,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=30,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
+
   # cvlc v4l2:///dev/video$1:width=1920:height=1080 :input-slave=alsa://hw:$hwNum,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=20,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
   # ffmpeg -f video4linux2 -input_format h264 -s 1920x1080 -i /dev/video0 -vcodec rawvideo test.mkv
 

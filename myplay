@@ -21,11 +21,14 @@ function do_for_sigint() {
 }
 
 #start up all USB webcams connected to system
-myTotalCameras="$(ls /dev/video* | wc -l)"
-echo $myTotalCameras
-for ((i=0;i<$myTotalCameras;i++))
+# myTotalCameras="$(ls /dev/video* | wc -l)"
+myTotalCameras="$(ls /dev/video*)"
+vars=( $myTotalCameras )
+
+for i in "${vars[@]}"
 do
-    ( ./play_video $i & )
+    NUMBER=$(echo "$i" | sed 's/[^0-9]//g')
+    ( ./play_video $NUMBER & )
 done
 
 #trap ^c to handle exit gracefully and make backup

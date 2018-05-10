@@ -1,0 +1,2 @@
+#!/bin/bash
+v4l2-ctl -d$1 --list-formats-ext
