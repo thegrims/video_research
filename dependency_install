@@ -5,3 +5,5 @@ sudo apt update
 sudo apt install vlc
 
 sudo apt install mplayer
+
+sudo apt-get install v4l-utils

@@ -9,7 +9,7 @@ function do_for_sigint() {
   mkdir ./video/"$myDate"
   # move all video files into new directory
   mv *.ogg ./video/"$myDate"
-
+  mv *.mkv ./video/"$myDate"
   # create FQ path to new directory for drive upload
   targetDir="$(pwd)/video/$myDate"
   echo $targetDir
