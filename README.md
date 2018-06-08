@@ -1,6 +1,8 @@
 # video_research
 bash scripts being developed for VLC camera automation
 
+![alt text](https://raw.githubusercontent.com/osudrl/video_research/master/controlFlow.png)
+
 ## Instructions For Use
 ### Setup
 Run `./dependency_install` to install script dependencies
