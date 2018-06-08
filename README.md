@@ -1,7 +1,19 @@
 # video_research
 bash scripts being developed for VLC camera automation
 
+## Run Description
+In linux, video I/O is done through /dev/video* where * is the index of the plugged in webcam. The list of cameras goes from 0 to # of cameras plugged in -1.
+
+The bash control script queries /dev/video* and gets a list of webcams plugged in. Then for each webcam, the script starts an instance of the ffmpeg software which streams video to a file.
+
+When Ctrl C, the operating system sents a SIGINT signal to the control script, which transfers to a signal handler function.
+
+The signal handler script makes a new directory with the days time and date, moves all video files to that location, and uploads the new directory and it’s contents to Google Drive.
+
+The script then kills off all of the ffmpeg scripts and the video recording software that they are running.
+
 ![alt text](https://raw.githubusercontent.com/osudrl/video_research/master/controlFlow.png)
+
 
 ## Instructions For Use
 ### Setup
