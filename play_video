@@ -1,13 +1,13 @@
 #!/bin/bash
 
-v4l2-ctl -d /dev/video$1 -c power_line_frequency=0
-v4l2-ctl -d /dev/video$1 -c focus_auto=0
-v4l2-ctl -d /dev/video$1 -c focus_absolute=0
-v4l2-ctl -d /dev/video$1 -c white_balance_temperature_auto=0
-v4l2-ctl -d /dev/video$1 -c white_balance_temperature=4900
-v4l2-ctl -d /dev/video$1 -c exposure_auto=0
-v4l2-ctl -d /dev/video$1 -c exposure_absolute=175
-v4l2-ctl -d /dev/video$1 -c zoom=500
+v4l2-ctl --device=/dev/video$1 -c power_line_frequency=0
+v4l2-ctl --device=/dev/video$1 -c focus_auto=0
+v4l2-ctl --device=/dev/video$1 -c focus_absolute=0
+v4l2-ctl --device=/dev/video$1 -c white_balance_temperature_auto=0
+v4l2-ctl --device=/dev/video$1 -c white_balance_temperature=4500
+v4l2-ctl --device=/dev/video$1 -c exposure_auto=0
+v4l2-ctl --device=/dev/video$1 -c exposure_absolute=175
+v4l2-ctl --device=/dev/video$1 -c zoom_absolute=500
 
 echo Number: $1
   # cvlc v4l2:///dev/video$1:width=800:height=600 :input-slave=alsa://hw:$1,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=30,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
