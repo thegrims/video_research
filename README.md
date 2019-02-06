@@ -1,5 +1,5 @@
 # video_research
-bash scripts being developed for VLC camera automation
+bash scripts that were developed to automatically grab all video from plugged in USB webcams, store the videos in folders marked by the date and time of recording, and upload them to google drive once recording is complete.
 
 ## Instructions For Use
 ### Setup
