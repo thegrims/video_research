@@ -6,7 +6,7 @@ In linux, video I/O is done through /dev/video* where * is the index of the plug
 
 The bash control script queries /dev/video* and gets a list of webcams plugged in. Then for each webcam, the script starts an instance of the ffmpeg software which streams video to a file.
 
-When Ctrl C, the operating system sents a SIGINT signal to the control script, which transfers to a signal handler function.
+When Ctrl+C is pressed, the operating system sends a SIGINT signal to the control script, which transfers to a signal handler function.
 
 The signal handler script makes a new directory with the days time and date, moves all video files to that location, and uploads the new directory and it’s contents to Google Drive.
 
@@ -41,6 +41,7 @@ We had problems testing our system until we realized that it was necessary to up
 
 
 ### Usage
-Run `./myplay` to stream webcam video to video folders inside __/video__  
+Run `./myplay` to stream webcam video to video folders inside __/video__ 
+Press `Ctrl+C` to stop recording and save
 
 If program is not getting all possible video and audio sources, use diagnostic script `./list_video` to list out video ports, video formats, and sound sources
