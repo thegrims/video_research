@@ -10,16 +10,5 @@ v4l2-ctl --device=/dev/video$1 -c exposure_absolute=175
 v4l2-ctl --device=/dev/video$1 -c zoom_absolute=500
 
 echo Number: $1
-  # cvlc v4l2:///dev/video$1:width=800:height=600 :input-slave=alsa://hw:$1,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=30,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
   ffmpeg -vcodec h264 -f v4l2 -video_size 1920x1080 -i /dev/video$1 -vcodec copy -y output$1.mkv
-  # cvlc v4l2:///dev/video$1:width=1920:height=1080 :input-slave=alsa://hw:$hwNum,0 --run-time $2 --stop-time=$2 vlc://quit --sout="#transcode{vcodec=theo,vb=2000,fps=20,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output"$1".ogg}"
-  # ffmpeg -f video4linux2 -input_format h264 -s 1920x1080 -i /dev/video0 -vcodec rawvideo test.mkv
-
-  # PID=$!
-  # echo blah
-  # echo $PID
-  # kill -INT PID
 exit
-# vlc v4l2:///dev/video1 --sout-standard-path=test.avi
-# mencoder tv:// -tv driver=v4l2:width=800:height=600:device=/dev/video$1:fps=30:outfmt=yuy2:forceaudio:alsa:adevice=hw.2,0 -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=1800 -ffourcc xvid -oac mp3lame -lameopts cbr=128 -o output4.avi
-# mencoder tv:// -tv driver=v4l2:width=800:height=600:device=/dev/video2:fps=30:outfmt=yuy2:forceaudio:alsa:adevice=hw.2,0 -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=1800 -ffourcc xvid -oac mp3lame -lameopts cbr=128 -o output5.avi
