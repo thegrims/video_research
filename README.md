@@ -41,7 +41,8 @@ We had problems testing our system until we realized that it was necessary to up
 
 
 ### Usage
-Run `./myplay` to stream webcam video to video folders inside __/video__ 
+Run `./myplay` to stream webcam video to video folders inside __/video__
+
 Press `Ctrl+C` to stop recording and save
 
 If program is not getting all possible video and audio sources, use diagnostic script `./list_video` to list out video ports, video formats, and sound sources
