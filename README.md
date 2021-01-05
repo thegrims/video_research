@@ -31,8 +31,7 @@ In myplay, set
 Signals carried by USB cables degrade as they are carried over distance, the longer the cable, the weaker the signal. At up to 30 feet, the USB cables we used to transmit our video footage push the USB signal of video footage to the limit. The video signal is very weak. This means that USB cables longer than 30 feet will probably not work, nor will multiple 15 foot USB cables connected in sequence.
 
 #### Electromagnetic Radiation Sources
-Because of signal weakness in 30 foot cables, it means that they are subject to electromagnetic radiation from things like power transformers, which will disrupt the video signal before it reaches the computer.  
-When planning the location of the webcams for recording CASSIE, we had to take into account EM signal disruption and mount the cameras to areas that were not affected by this.
+Because of signal weakness in 30 foot cables, it means that they are subject to electromagnetic radiation from things like power transformers, which will disrupt the video signal before it reaches the computer. When planning the location of the webcams for recording CASSIE, we had to take into account EM signal disruption and mount the cameras to areas that were not affected by EM radiation from a large treadmill motor.
 
 
 #### USB 3 vs 2
